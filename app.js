@@ -16,19 +16,29 @@ const getData = async (keyword) => {
   }
 }
 
-getData('Kiki')
+// getData('Kiki')
+
+const button = document.querySelector('#search')
+button.addEventListener('click', (e) => {
+  e.preventDefault()
+  let inputValue = document.querySelector('input').value.toLowerCase()
+  getData(inputValue)
+  document.querySelector('input').value = ''
+})
 
 function retrieveMovie (movieData, keyword) {
-  const titles = [];
-  movieData.forEach((element) => {
-    titles.push(element.title)
-  })
-  console.log(titles)
-  
-  titles.forEach((movie) => {
-    if (movie.includes(keyword)) {
-      // return movie;
-      console.log(movie)
+  movieData.forEach((movie) => {
+    let movieTitle = movie.title
+    if (movieTitle.toLowerCase().includes(keyword)) {
+      console.log(movieTitle)
+      // console.log(movieTitle.split(' ').join('_').split("'").join('')) //for rottentomatoes link. rottentomatoes.com/m/movieTitle spaces replaced with _
     }
   })
+  
+  // titles.forEach((movie) => {
+  //   if (movie.includes(keyword)) {
+  //     // return movie;
+  //     console.log(movie)
+  //   }
+  // })
 }
