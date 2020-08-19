@@ -8,7 +8,7 @@ const getData = async (keyword) => {
   try {
     const res = await axios.get(base_url)
     let data = res.data
-    console.log(data)
+    removeResults()
     retrieveMovie(data, keyword)
 
   } catch (error) {
@@ -21,7 +21,6 @@ const getData = async (keyword) => {
 const button = document.querySelector('#search')
 button.addEventListener('click', (e) => {
   e.preventDefault()
-  removeResults()
   let inputValue = document.querySelector('input').value.toLowerCase()
   getData(inputValue)
   document.querySelector('input').value = ''
@@ -29,22 +28,22 @@ button.addEventListener('click', (e) => {
 
 function removeResults() {
   const oldSearch = document.querySelector('.search-results')
-  oldSearch.textContent = ''
-  const resultsUl = document.querySelector(".movie-details")
-  while (resultsUl.firstChild)
-    resultsUl.removeChild(ul.firstChild)
+  oldSearch.innerHTML = ''
 }
 
 function retrieveMovie (movieData, keyword) {
+  const resultsHeading = document.createElement('h2')
+  resultsHeading.textContent = 'Search Result(s)'
+  const searchResult = document.querySelector('.search-results')
+  searchResult.append(resultsHeading)
+
   movieData.forEach((movie) => {
     let movieTitle = movie.title
+    
     if (movieTitle.toLowerCase().includes(keyword)) {
       console.log(movieTitle)
-      const searchResult = document.querySelector('.search-results')
-      const resultsHeading = document.createElement('h2')
-      const movieResult = document.querySelector('.movie-details')
-      resultsHeading.textContent = 'Search Result(s)'
-      searchResult.append(resultsHeading)
+      const movieResult = document.createElement('ul')
+      movieResult.className = 'movie-details'
       searchResult.append(movieResult)
 
       const resultsTitle = document.createElement('li')
