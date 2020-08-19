@@ -31,8 +31,8 @@ function removeResults() {
   const oldSearch = document.querySelector('.search-results')
   oldSearch.textContent = ''
   const resultsUl = document.querySelector(".movie-details")
-  while (resultsUl[0])
-    resultsUl.removeChild(ul[0])
+  while (resultsUl.firstChild)
+    resultsUl.removeChild(ul.firstChild)
 }
 
 function retrieveMovie (movieData, keyword) {
