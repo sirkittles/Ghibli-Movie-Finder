@@ -1,6 +1,6 @@
 //https://ghibliapi.herokuapp.com/#
 const base_url = `http://ghibliapi.herokuapp.com/films`
-const base_img_url = `http://www.omdbapi.com/?apikey=f827ccf7&`
+const base_img_url = `http://cors-anywhere.herokuapp.com/http://www.omdbapi.com/?apikey=f827ccf7&`
 // const title = `${title}`
 // removeResults()
 const getData = async (keyword) => {
@@ -48,7 +48,8 @@ function retrieveMovie (movieData, keyword, imgRes) {
     if (movieTitle.toLowerCase().includes(keyword)) {
       console.log(movieTitle)
       const img = document.createElement('img')
-      img.src = `${imgRes}t=${movie.title}`
+      const movieApi = `${imgRes}t=${movieTitle}`
+      img.src = movieApi.poster 
       const movieResult = document.createElement('ul')
       movieResult.className = 'movie-details'
       searchResult.append(movieResult)
