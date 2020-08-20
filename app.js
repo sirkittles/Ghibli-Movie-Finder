@@ -8,13 +8,13 @@ const getData = async (keyword) => {
 
   try {
     const res = await axios.get(base_url)
-    // const imgRes = await axios.get(`${base_img_url}`)
+    const imgRes = await axios.get(`${base_img_url}`)
     let data = res.data
     // let movieImg = imgRes.data
     // console.log(data)
     // console.log(movieImg)
     removeResults()
-    retrieveMovie(data, keyword)
+    retrieveMovie(data, keyword, base_img_url)
 
   } catch (error) {
     console.log(`Error: ${error}`)
@@ -36,7 +36,7 @@ function removeResults() {
   oldSearch.innerHTML = ''
 }
 
-function retrieveMovie (movieData, keyword) {
+function retrieveMovie (movieData, keyword, imgRes) {
   const resultsHeading = document.createElement('h2')
   resultsHeading.textContent = 'Search Result(s)'
   const searchResult = document.querySelector('.search-results')
@@ -47,17 +47,21 @@ function retrieveMovie (movieData, keyword) {
     
     if (movieTitle.toLowerCase().includes(keyword)) {
       console.log(movieTitle)
+      const img = document.createElement('img')
+      img.src = `${imgRes}t=${movie.title}`
       const movieResult = document.createElement('ul')
       movieResult.className = 'movie-details'
       searchResult.append(movieResult)
 
+      const resultsImage = document.createElement('li')
       const resultsTitle = document.createElement('li')
       const resultsDirector = document.createElement('li')
       const resultsProducer = document.createElement('li')
       const resultsDate = document.createElement('li')
       const resultsScore = document.createElement('li')
       const resultsDescription = document.createElement('li')
-        
+      
+      resultsImage.append(img)
       resultsTitle.innerHTML = `<strong>Title:</strong> ${movie.title}` 
       resultsDirector.innerHTML = `<strong>Director:</strong> ${movie.director}` 
       resultsProducer.innerHTML = `<strong>Producer:</strong> ${movie.producer}`
