@@ -1,5 +1,6 @@
 //https://ghibliapi.herokuapp.com/#
 const base_url = `http://ghibliapi.herokuapp.com/films`
+const base_img_url = `http://www.omdbapi.com/?apikey=f827ccf7&`
 // const title = `${title}`
 // removeResults()
 const getData = async (keyword) => {
@@ -7,7 +8,11 @@ const getData = async (keyword) => {
 
   try {
     const res = await axios.get(base_url)
+    const imgRes = await axios.get(`${base_img_url}`)
     let data = res.data
+    let movieImg = imgRes.data
+    console.log(data)
+    console.log(movieImg)
     removeResults()
     retrieveMovie(data, keyword)
 
