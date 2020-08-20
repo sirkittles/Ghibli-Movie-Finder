@@ -8,11 +8,11 @@ const getData = async (keyword) => {
 
   try {
     const res = await axios.get(base_url)
-    const imgRes = await axios.get(`${base_img_url}`)
+    // const imgRes = await axios.get(`${base_img_url}`)
     let data = res.data
-    let movieImg = imgRes.data
-    console.log(data)
-    console.log(movieImg)
+    // let movieImg = imgRes.data
+    // console.log(data)
+    // console.log(movieImg)
     removeResults()
     retrieveMovie(data, keyword)
 
@@ -62,7 +62,7 @@ function retrieveMovie (movieData, keyword) {
       resultsDirector.innerHTML = `<strong>Director:</strong> ${movie.director}` 
       resultsProducer.innerHTML = `<strong>Producer:</strong> ${movie.producer}`
       resultsDate.innerHTML = `<strong>Release Date:</strong> ${movie.release_date}`
-      resultsScore.innerHTML = `<strong>Rotten Tomatoes Score:</strong> ${movie.rt_score}`
+      resultsScore.innerHTML = `<strong>Rotten Tomatoes Score:</strong> <a href="https://www.rottentomatoes.com/m/${movieTitle.split(' ').join('_').split("'").join('')}">${movie.rt_score}<a>`
       resultsDescription.innerHTML = `<strong>Synopsis:</strong> ${movie.description}`
       
       movieResult.append(resultsTitle)
