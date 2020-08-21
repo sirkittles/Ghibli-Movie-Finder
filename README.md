@@ -2,7 +2,7 @@
 
 App Title: Ghibli Movie Finder
 
-App Description: A one-stop search tool which allows the user to find info regarding a Ghibli movie by title, director, or keyword.  The app will receive data from the Ghibli API and provide the user with any movies that match the search parameters. 
+App Description: A one-stop search tool which allows the user to find info regarding a Ghibli movie by title or title keyword.  The app will receive data from the Ghibli API and provide the user with any movies that match the search parameters. 
 
 API: Studio Ghibli API https://ghibliapi.herokuapp.com/#
 
@@ -51,17 +51,16 @@ Divide search parameters by a drop down menu.
 Create a header of clickable poster images that will pull up search results for that movie.
 Add additional searchable parameters.
 Allow for searches to not be case sensitive.
-Clean up aesthetic of site.
 Results will pull poster images from OMDB API
 
 Goals:
 |  Day | Deliverable | Status
 |---|---| ---|
 |August 15-16| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
-|August 17| Project Approval / Start basic HTML, CSS, JS includingn data import| Incomplete
-|August 18| Build on JS and HTML | Incomplete
-|August 19| Complete CSS, start Post MVP work | Incomplete
-|August 20| Post MVP | Incomplete
+|August 17| Project Approval / Start basic HTML, CSS, JS includingn data import| Complete
+|August 18| Build on JS and HTML | Complete
+|August 19| Complete CSS, start Post MVP work | Complete
+|August 20| Post MVP | Partial
 |August 21| Presentations | Incomplete
 
 Priority Matrix: 
@@ -71,16 +70,16 @@ https://app.lucidchart.com/invitations/accept/c267e70e-fbc8-4001-9c41-784e9b1939
 Timetable:
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Basic HTML | M | 3hrs | hrs | hrs | 
-| Basic CSS | M | 3hrs| hrs | hrs |
-| Basic JS | M | 3hrs| hrs | hrs |
-| Explore Data | M | 5hrs| hrs | hrs |
-| JS - Search Box | H | 4hrs | hrs | hrs |
-| JS - Result Box | H | 4hrs| hrs | hrs |
-| JS - Result Image | H | 2hrs| hrs | hrs |
-| CSS - Search Box | H | 2hrs| hrs | hrs |
-| CSS - Result Box/Image | H | 3hrs| hrs | hrs |
-| Post MVP - Add Drop Down Search | L | 3hrs| hrs | hrs |
-| Post MVP - Add Image Carousel Header | L | 5hrs | hrs | hrs |
-| Post MVP - Add more styling | L | 3hrs | hrs | hrs |
-| Total | -- | 40hrs| hrs | hrs |
+| Basic HTML | M | 3hrs | 2hrs | 2hrs | 
+| Basic CSS | M | 3hrs| 2hrs | 2hrs |
+| Basic JS | M | 3hrs| 2hrs | 2hrs |
+| Explore Data | M | 5hrs| 8hrs | 8hrs |
+| JS - Search Box | H | 4hrs | 3hrs | 3hrs |
+| JS - Result Box | H | 4hrs| 9hrs | 9hrs |
+| JS - Result Image | H | 2hrs| 7hrs | 7hrs |
+| CSS - Search Box | H | 2hrs| 2hrs | 2hrs |
+| CSS - Result Box/Image | H | 3hrs| 5hrs | 5hrs |
+| Post MVP - Add Drop Down Search | L | 3hrs| 0hrs | 0hrs |
+| Post MVP - Add Image Carousel Header | L | 5hrs | 0hrs | 0hrs |
+| Post MVP - Add FS Landing Page | L | 3hrs | 4hrs | 4hrs |
+| Total | -- | 40hrs| 42hrs | 42hrs |
