@@ -95,6 +95,8 @@ function retrieveMovie (movieData, keyword) {
       movieResult.append(resultsDate)
       movieResult.append(resultsScore)
       // console.log(movieTitle.split(' ').join('_').split("'").join('')) //for rottentomatoes link. rottentomatoes.com/m/movieTitle spaces replaced with _
+    } else {
+      resultsHeading.textContent = `Sorry! No Results Were Found`
     }
   })
   
