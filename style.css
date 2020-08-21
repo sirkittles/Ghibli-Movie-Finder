@@ -75,9 +75,10 @@ h1 {
 
 h2 {
   color: #a7ac9c;
+  font-family: 'Playfair Display', serif;
 }
 
-a:link, a:visited, a:active {
+a:link, a:visited {
   color: #26532B;
   font-weight: bold;
   text-decoration: underline;
