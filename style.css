@@ -15,7 +15,6 @@ body {
   background-repeat: no-repeat;
   background-size: 25%;
   background-color: #FFFCEB;
-  /* background-color: #fff7e2; */
 }
 
 header {
@@ -41,6 +40,7 @@ input {
   /* border-radius: 14%; */
   margin: 5px;
   border: 1px solid darkgrey;
+  font-family: 'Poppins', sans-serif;
 }
 
 button {
@@ -49,6 +49,7 @@ button {
   background-color: lavender;
   padding: 8px;
   border-radius: 12px;
+  font-family: 'Raleway', sans-serif;
 }
 
 img {
@@ -62,19 +63,21 @@ ul {
 
 li {
   margin: 8px;
+  font-family: 'Raleway', sans-serif;
 }
 
 h1 {
   padding: 5px;
   margin: 30px auto 0px;
   color: #26532B;
+  font-family: 'Poppins', sans-serif;
 }
 
 h2 {
   color: #a7ac9c;
 }
 
-a:link, a:visited {
+a:link, a:visited, a:active {
   color: #26532B;
   font-weight: bold;
   text-decoration: underline;
@@ -91,7 +94,7 @@ a:hover {
 
 }
 
-.search-section {
+.search-box {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,8 +113,17 @@ a:hover {
   min-height: 500px;
 }
 
+.search-header {
+  font-family: 'Playfair Display', serif;
+}
+
 .movie-details {
   list-style: none;
+}
+
+.bold {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
 }
 
 .tracking-in-expand-fwd {
@@ -129,22 +141,14 @@ a:hover {
   border-radius: 12px;
 }
 
-#img-container {
-  /* display: flex; */
-  width: 100vw;
-  /* height: 100px; */
+#logo-container {
   background-color: #DAEBD5;
-  /* background-color: #DDF8E8; */
-  /* background-color: #B7E3CC; */
-  /* flex-direction: row; */
-  /* align-self: flex-start; */
 }
 
 #logo-img {
   height: 25%;
   width: 25%;
   margin: 5px;
-  /* position: absolute; */
 }
 
 @media only screen and (max-width: 500px) {
@@ -275,12 +279,3 @@ a:hover {
 }
 
 
-
-/* #background-img {
-  height: 20%;
-  width: 20%;
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  z-index: -1;
-} */

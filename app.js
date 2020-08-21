@@ -2,38 +2,30 @@
 const base_url = `http://ghibliapi.herokuapp.com/films`
 const base_img_url = `http://www.omdbapi.com/?apikey=f827ccf7&`
 // const title = `${title}`
-// removeResults()
+
 const getData = async (keyword) => {
   // const url = `${base_url}`
-
   try {
     const res = await axios.get(base_url)
     let data = res.data
-    // let movieImg = imgRes.data
-    // console.log(data)
-    // console.log(movieImg)
+
     removeResults()
     retrieveMovie(data, keyword)
+
   } catch (error) {
     console.log(`Error: ${error}`)
   }
 }
-
 // getData('Kiki')
 
 const getMoviePoster = async (movieTitle) => {
-    
   try {
     const imgRes = await axios.get(`${base_img_url}t=${movieTitle}`)
-    // const imgUrl = imgRes.data.Poster
-    // const resultsImg = document.createElement('img')
-    // resultsImg.src = imgUrl
-    // resultsImg.className = 'search-results'
+    // console.log(imgRes.data.Poster)
     return imgRes.data.Poster
   } catch (error) {
     console.log(`Error: ${error}`)
   }
-
 }
 
 const button = document.querySelector('#search')
@@ -41,12 +33,12 @@ button.addEventListener('click', (e) => {
   e.preventDefault()
   let inputValue = document.querySelector('input').value.toLowerCase()
   getData(inputValue)
-  document.querySelector('input').value = ''
+  document.querySelector('input').value = '' //clears searchbox after search
 })
 
 function removeResults() {
   const oldSearch = document.querySelector('.search-results')
-  oldSearch.innerHTML = ''
+  oldSearch.innerHTML = '' //clears out everything made after search-results
 }
 
 function retrieveMovie (movieData, keyword) {
@@ -60,11 +52,8 @@ function retrieveMovie (movieData, keyword) {
     
     if (movieTitle.toLowerCase().includes(keyword)) {
       // console.log(movieTitle)
-      // const img = document.createElement('img')
-      // const movieApi = `${imgRes}t=${movieTitle}`
-      // img.src = movieApi.poster 
       const imgUrl = await getMoviePoster(movieTitle)
-      console.log(imgUrl)
+      // console.log(imgUrl)
       const movieResult = document.createElement('ul')
       movieResult.className = 'movie-details'
       searchResult.append(movieResult)
@@ -78,14 +67,14 @@ function retrieveMovie (movieData, keyword) {
       const resultsDescription = document.createElement('li')
       const posterImg = document.createElement('img')
       posterImg.src = imgUrl
-      
+            
       resultsImage.append(posterImg)
-      resultsTitle.innerHTML = `<strong>Title:</strong> ${movie.title}` 
-      resultsDirector.innerHTML = `<strong>Director:</strong> ${movie.director}` 
-      resultsProducer.innerHTML = `<strong>Producer:</strong> ${movie.producer}`
-      resultsDate.innerHTML = `<strong>Release Date:</strong> ${movie.release_date}`
-      resultsScore.innerHTML = `<strong>Rotten Tomatoes Score:</strong> <a href="https://www.rottentomatoes.com/m/${movieTitle.split(' ').join('_').split("'").join('')}">${movie.rt_score}<a>`
-      resultsDescription.innerHTML = `<strong>Synopsis:</strong> ${movie.description}`
+      resultsTitle.innerHTML = `<span class="bold">Title:</span> ${movie.title}` 
+      resultsDirector.innerHTML = `<span class="bold">Director:</span> ${movie.director}` 
+      resultsProducer.innerHTML = `<span class="bold">Producer:</span> ${movie.producer}`
+      resultsDate.innerHTML = `<span class="bold">Release Date:</span> ${movie.release_date}`
+      resultsScore.innerHTML = `<span class="bold">Rotten Tomatoes Score:</span> <a href="https://www.rottentomatoes.com/m/${movieTitle.split(' ').join('_').split("'").join('')}">${movie.rt_score}<a>`
+      resultsDescription.innerHTML = `<span class="bold">Synopsis:</span> ${movie.description}`
       
       movieResult.append(resultsImage)
       movieResult.append(resultsTitle)
@@ -94,14 +83,7 @@ function retrieveMovie (movieData, keyword) {
       movieResult.append(resultsProducer)
       movieResult.append(resultsDate)
       movieResult.append(resultsScore)
-      // console.log(movieTitle.split(' ').join('_').split("'").join('')) //for rottentomatoes link. rottentomatoes.com/m/movieTitle spaces replaced with _
+      
     } 
   })
-  
-  // titles.forEach((movie) => {
-  //   if (movie.includes(keyword)) {
-  //     // return movie;
-  //     console.log(movie)
-  //   }
-  // })
 }
