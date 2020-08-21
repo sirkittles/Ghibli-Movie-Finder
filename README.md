@@ -1,12 +1,12 @@
 # P1
 
-App Title: Ghibli Movie Finder
+**App Title**: Ghibli Movie Finder
 
-App Description: A one-stop search tool which allows the user to find info regarding a Ghibli movie by title or title keyword.  The app will receive data from the Ghibli API and provide the user with any movies that match the search parameters. 
+**App Description**: A one-stop search tool which allows the user to find info regarding a Ghibli movie by title or title keyword.  The app will receive data from the Ghibli API and provide the user with any movies that match the search parameters. 
 
-API: Studio Ghibli API https://ghibliapi.herokuapp.com/#
+**API**: [Studio Ghibli API] (https://ghibliapi.herokuapp.com/#)
 
-API Snippet: 
+**API Snippet: 
 
 ``` JSON
 [
@@ -39,21 +39,21 @@ API Snippet:
 ]
 ```
 
-Wireframes: https://wireframe.cc/5G1lgr
+**Wireframes:** https://wireframe.cc/5G1lgr
 
-MVP: 
+**MVP:** 
 Allow user to search in one search bar.
 Results will provide full info about movie.
 Search bars will clear after each search.
 
-PostMVP:
+**PostMVP:**
 Divide search parameters by a drop down menu.
 Create a header of clickable poster images that will pull up search results for that movie.
 Add additional searchable parameters.
 Allow for searches to not be case sensitive.
 Results will pull poster images from OMDB API
 
-Goals:
+**Goals:**
 |  Day | Deliverable | Status
 |---|---| ---|
 |August 15-16| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
@@ -63,11 +63,11 @@ Goals:
 |August 20| Post MVP | Partial
 |August 21| Presentations | Incomplete
 
-Priority Matrix: 
+**Priority Matrix:**
 https://app.lucidchart.com/invitations/accept/c267e70e-fbc8-4001-9c41-784e9b1939ab
 
 
-Timetable:
+**Timetable:**
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Basic HTML | M | 3hrs | 2hrs | 2hrs | 
@@ -83,3 +83,10 @@ Timetable:
 | Post MVP - Add Image Carousel Header | L | 5hrs | 0hrs | 0hrs |
 | Post MVP - Add FS Landing Page | L | 3hrs | 4hrs | 4hrs |
 | Total | -- | 40hrs| 42hrs | 42hrs |
+
+
+## Change Log
+Added a link to the Rotten Tomatoes site for movie in the movie score.
+Added full screen landing page.
+Added two small animations for a subtle effect.
+Added a themed cursor.
