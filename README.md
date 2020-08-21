@@ -11,32 +11,27 @@
 ``` JSON
 [
   {
-    "id": "603428ba-8a86-4b0b-a9f1-65df6abef3d3",
-    "name": "Cat",
-    "classification": "Mammal",
-    "eye_colors": "Brown, Black, Yellow, White, Emerald, Blue, Green",
-    "hair_colors": "White, Black, Brown, Beige, Grey, Yellow",
-    "url": "https://ghibliapi.herokuapp.com/species/603428ba-8a86-4b0b-a9f1-65df6abef3d3",
+    "id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
+    "title": "Castle in the Sky",
+    "description": "The orphan Sheeta inherited a mysterious crystal that links her to the mythical sky-kingdom of Laputa. With the help of resourceful Pazu and a rollicking band of sky pirates, she makes her way to the ruins of the once-great civilization. Sheeta and Pazu must outwit the evil Muska, who plans to use Laputa's science to make himself ruler of the world.",
+    "director": "Hayao Miyazaki",
+    "producer": "Isao Takahata",
+    "release_date": "1986",
+    "rt_score": "95",
     "people": [
-      "https://ghibliapi.herokuapp.com/people/7151abc6-1a9e-4e6a-9711-ddb50ea572ec",
-      "https://ghibliapi.herokuapp.com/people/f467e18e-3694-409f-bdb3-be891ade1106",
-      "https://ghibliapi.herokuapp.com/people/89026b3a-abc4-4053-ab1a-c6d2eea68faa",
-      "https://ghibliapi.herokuapp.com/people/6b3facea-ea33-47b1-96ce-3fc737b119b8",
-      "https://ghibliapi.herokuapp.com/people/3042818d-a8bb-4cba-8180-c19249822d57",
-      "https://ghibliapi.herokuapp.com/people/58d1973f-f247-47d7-9358-e56cb0d2b5a6",
-      "https://ghibliapi.herokuapp.com/people/a3d8e70f-46a0-4e5a-b850-db01620d6b92",
-      "https://ghibliapi.herokuapp.com/people/fc196c4f-0201-4ed2-9add-c6403f7c4d32",
-      "https://ghibliapi.herokuapp.com/people/466bc926-2024-4653-ac63-fe52f2dc8c7b"
+    "https://ghibliapi.herokuapp.com/people/"
     ],
-    "films": [
-      "https://ghibliapi.herokuapp.com/films/58611129-2dbc-4a81-a72f-77ddfc1b1b49",
-      "https://ghibliapi.herokuapp.com/films/ea660b10-85c4-4ae3-8a5f-41cea3648e3e",
-      "https://ghibliapi.herokuapp.com/films/ff24da26-a969-4f0e-ba1e-a122ead6c6e3",
-      "https://ghibliapi.herokuapp.com/films/90b72513-afd4-4570-84de-a56c312fdf81",
-      "https://ghibliapi.herokuapp.com/films/2de9426b-914a-4a06-a3a0-5e6d9d3886f6"
-    ]
-  }
-]
+    "species": [
+    "https://ghibliapi.herokuapp.com/species/af3910a6-429f-4c74-9ad5-dfe1c4aa04f2"
+    ],
+    "locations": [
+    "https://ghibliapi.herokuapp.com/locations/"
+    ],
+    "vehicles": [
+    "https://ghibliapi.herokuapp.com/vehicles/"
+    ],
+    "url": "https://ghibliapi.herokuapp.com/films/2baf70d1-42bb-4437-b551-e5fed5a87abe"
+  },
 ```
 
 **Wireframes:** https://wireframe.cc/5G1lgr
@@ -84,6 +79,25 @@ https://app.lucidchart.com/invitations/accept/c267e70e-fbc8-4001-9c41-784e9b1939
 | Post MVP - Add FS Landing Page | L | 3hrs | 4hrs | 4hrs |
 | Total | -- | 40hrs| 42hrs | 42hrs |
 
+## Code Snippet
+``` JSON
+function retrieveMovie (movieData, keyword) {
+  const resultsHeading = document.createElement('h2')
+  resultsHeading.textContent = 'Search Result(s)'
+  const searchResult = document.querySelector('.search-results')
+  searchResult.append(resultsHeading)
+
+  movieData.forEach(async (movie) => {
+    let movieTitle = movie.title
+    
+    if (movieTitle.toLowerCase().includes(keyword)) {
+      // console.log(movieTitle)
+      const imgUrl = await getMoviePoster(movieTitle)
+      // console.log(imgUrl)
+      const movieResult = document.createElement('ul')
+      movieResult.className = 'movie-details'
+      searchResult.append(movieResult)
+```
 
 ## Change Log
 Added a link to the Rotten Tomatoes site for movie in the movie score.
