@@ -101,6 +101,9 @@ function retrieveMovie (movieData, keyword) {
 
 ## Change Log
 Added a link to the Rotten Tomatoes site for movie in the movie score.
+
 Added full screen landing page.
+
 Added two small animations for a subtle effect.
+
 Added a themed cursor.
