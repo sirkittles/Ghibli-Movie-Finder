@@ -4,7 +4,7 @@
 
 **App Description**: A one-stop search tool which allows the user to find info regarding a Ghibli movie by title or title keyword.  The app will receive data from the Ghibli API and provide the user with any movies that match the search parameters. 
 
-**API**: [Studio Ghibli API] (https://ghibliapi.herokuapp.com/#)
+**API**: [Studio Ghibli API](https://ghibliapi.herokuapp.com/#)
 
 **API Snippet: 
 
