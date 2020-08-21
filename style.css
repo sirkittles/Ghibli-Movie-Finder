@@ -96,7 +96,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  margin: 10px;
+  margin: 15px;
 }
 
 .search-results {
@@ -141,8 +141,8 @@ a:hover {
 }
 
 #logo-img {
-  height: 20%;
-  width: 20%;
+  height: 25%;
+  width: 25%;
   margin: 5px;
   /* position: absolute; */
 }
