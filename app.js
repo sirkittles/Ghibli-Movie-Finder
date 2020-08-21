@@ -1,10 +1,9 @@
 //https://ghibliapi.herokuapp.com/#
 const base_url = `http://ghibliapi.herokuapp.com/films`
 const base_img_url = `http://www.omdbapi.com/?apikey=f827ccf7&`
-// const title = `${title}`
+
 
 const getData = async (keyword) => {
-  // const url = `${base_url}`
   try {
     const res = await axios.get(base_url)
     let data = res.data
@@ -21,7 +20,6 @@ const getData = async (keyword) => {
 const getMoviePoster = async (movieTitle) => {
   try {
     const imgRes = await axios.get(`${base_img_url}t=${movieTitle}`)
-    // console.log(imgRes.data.Poster)
     return imgRes.data.Poster
   } catch (error) {
     console.log(`Error: ${error}`)
@@ -51,9 +49,7 @@ function retrieveMovie (movieData, keyword) {
     let movieTitle = movie.title
     
     if (movieTitle.toLowerCase().includes(keyword)) {
-      // console.log(movieTitle)
       const imgUrl = await getMoviePoster(movieTitle)
-      // console.log(imgUrl)
       const movieResult = document.createElement('ul')
       movieResult.className = 'movie-details'
       searchResult.append(movieResult)
@@ -73,7 +69,7 @@ function retrieveMovie (movieData, keyword) {
       resultsDirector.innerHTML = `<span class="bold">Director:</span> ${movie.director}` 
       resultsProducer.innerHTML = `<span class="bold">Producer:</span> ${movie.producer}`
       resultsDate.innerHTML = `<span class="bold">Release Date:</span> ${movie.release_date}`
-      resultsScore.innerHTML = `<span class="bold">Rotten Tomatoes Score:</span> <a href="https://www.rottentomatoes.com/m/${movieTitle.split(' ').join('_').split("'").join('')}">${movie.rt_score}<a>`
+      resultsScore.innerHTML = `<span class="bold">Rotten Tomatoes Score:</span> <a href="https://www.rottentomatoes.com/m/${movieTitle.split(' ').join('_').split("'").join('')}" target="_blank">${movie.rt_score}<a>`
       resultsDescription.innerHTML = `<span class="bold">Synopsis:</span> ${movie.description}`
       
       movieResult.append(resultsImage)
