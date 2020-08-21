@@ -8,9 +8,25 @@ body {
   text-align: center;
   background: url("https://64.media.tumblr.com/5f572b7fd1c82443f416d16512e5f624/tumblr_myfqdmSsf11s07a9lo1_1280.png") bottom right fixed;
   background-repeat: no-repeat;
-  background-size: 30%;
+  background-size: 25%;
   background-color: #FFFCEB;
   /* background-color: #fff7e2; */
+}
+
+header {
+  background: url("http://images6.fanpop.com/image/photos/43200000/When-Marnie-Was-There-Wallpaper-studio-ghibli-43222233-1920-1200.png");
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+nav {
+  width: 100vw;
 }
 
 input {
@@ -29,18 +45,44 @@ button {
   border-radius: 12px;
 }
 
+img {
+  width: 100%;
+}
+
 ul {
   padding: 10px;
   margin: 10px;
 }
 
 li {
-  margin: 5px;
+  margin: 8px;
 }
 
 h1 {
   padding: 5px;
-  margin: 10px auto;
+  margin: 15px auto;
+  color: #26532B;
+}
+
+h2 {
+  color: #a7ac9c;
+}
+
+a:link, a:visited {
+  color: #26532B;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #DCEEDE;
+  background-color: #26532B; 
+}
+
+.header-text {
+  margin: 0px;
+
 }
 
 .search-section {
@@ -51,6 +93,11 @@ h1 {
   margin: 10px;
 }
 
+.tenor-gif-embed {
+  width: 50%;
+  text-align: center;
+}
+
 .search-results {
   display: flex;
   flex-direction: column;
@@ -58,10 +105,15 @@ h1 {
   align-items: center;
   max-width: 400px;
   margin: 30px auto;
+  background-color: #fffcebb3;
 }
 
 .movie-details {
   list-style: none;
+}
+
+#intro-textbox {
+  
 }
 
 #img-container {
@@ -78,6 +130,7 @@ h1 {
 #logo-img {
   height: 20%;
   width: 20%;
+  margin: 5px;
   /* position: absolute; */
 }
 
