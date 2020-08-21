@@ -80,7 +80,7 @@ https://app.lucidchart.com/invitations/accept/c267e70e-fbc8-4001-9c41-784e9b1939
 | Total | -- | 40hrs| 42hrs | 42hrs |
 
 ## Code Snippet
-``` JSON
+``` JS
 function retrieveMovie (movieData, keyword) {
   const resultsHeading = document.createElement('h2')
   resultsHeading.textContent = 'Search Result(s)'
