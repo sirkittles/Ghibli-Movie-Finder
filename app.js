@@ -1,6 +1,6 @@
 //https://ghibliapi.herokuapp.com/#
-const base_url = `http://ghibliapi.herokuapp.com/films`
-const base_img_url = `http://www.omdbapi.com/?apikey=f827ccf7&`
+const base_url = `https://ghibliapi.herokuapp.com/films`
+const base_img_url = `https://www.omdbapi.com/?apikey=f827ccf7&`
 
 
 const getData = async (keyword) => {
