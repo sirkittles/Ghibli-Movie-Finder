@@ -45,6 +45,7 @@ function retrieveMovie (movieData, keyword) {
   const searchResult = document.querySelector('.search-results')
   searchResult.append(resultsHeading)
 
+  // now running through movie data and looping through each movie for keyword.
   movieData.forEach(async (movie) => {
     let movieTitle = movie.title
     
