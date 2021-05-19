@@ -45,9 +45,10 @@ function retrieveMovie (movieData, keyword) {
   const searchResult = document.querySelector('.search-results')
   searchResult.append(resultsHeading)
 
+  // now running through movie data and looping through each movie for keyword.
   movieData.forEach(async (movie) => {
     let movieTitle = movie.title
-    
+
     if (movieTitle.toLowerCase().includes(keyword)) {
       const imgUrl = await getMoviePoster(movieTitle)
       const movieResult = document.createElement('ul')
@@ -63,15 +64,15 @@ function retrieveMovie (movieData, keyword) {
       const resultsDescription = document.createElement('li')
       const posterImg = document.createElement('img')
       posterImg.src = imgUrl
-            
+
       resultsImage.append(posterImg)
-      resultsTitle.innerHTML = `<span class="bold">Title:</span> ${movie.title}` 
-      resultsDirector.innerHTML = `<span class="bold">Director:</span> ${movie.director}` 
+      resultsTitle.innerHTML = `<span class="bold">Title:</span> ${movie.title}`
+      resultsDirector.innerHTML = `<span class="bold">Director:</span> ${movie.director}`
       resultsProducer.innerHTML = `<span class="bold">Producer:</span> ${movie.producer}`
       resultsDate.innerHTML = `<span class="bold">Release Date:</span> ${movie.release_date}`
       resultsScore.innerHTML = `<span class="bold">Rotten Tomatoes Score:</span> <a href="https://www.rottentomatoes.com/m/${movieTitle.split(' ').join('_').split("'").join('')}" target="_blank">${movie.rt_score}<a>`
       resultsDescription.innerHTML = `<span class="bold">Synopsis:</span> ${movie.description}`
-      
+
       movieResult.append(resultsImage)
       movieResult.append(resultsTitle)
       movieResult.append(resultsDescription)
@@ -79,7 +80,7 @@ function retrieveMovie (movieData, keyword) {
       movieResult.append(resultsProducer)
       movieResult.append(resultsDate)
       movieResult.append(resultsScore)
-      
-    } 
+
+    }
   })
 }
